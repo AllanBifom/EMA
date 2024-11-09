@@ -2,8 +2,10 @@ import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { AntDesign, Entypo, Ionicons, Octicons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 const index = () => {
+    const router = useRouter();
     return (
         <ScrollView>
             <LinearGradient colors={["#7F7FD5", "#E9E4F0"]} style={{ flex: 1 }}>
@@ -16,7 +18,9 @@ const index = () => {
                         <Entypo name="lock" size={24} color="black" />
                     </View>
                     <View style={{ marginTop: 20, flexDirection: "row", alignItems: "center", gap: 20 }}>
-                        <Pressable style={{
+                        <Pressable 
+                        onPress={() => router.push("/(home)/employees") }
+                        style={{
                             backgroundColor: "#D3CCE3",
                             padding: 12,
                             borderRadius: 6,
